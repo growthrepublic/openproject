@@ -112,7 +112,9 @@ gem 'cocaine'
 
 # required by Procfile, for deployment on heroku or packaging with packager.io.
 # also, better than thin since we can control worker concurrency.
-gem 'unicorn'
+gem 'puma'
+
+gem 'mina-puma'
 
 # Security fixes
 # Gems we don't depend directly on, but specify here to make sure we don't use a vulnerable
@@ -190,16 +192,8 @@ gem 'reform', '~> 1.0.4', require: false
 # warned.
 
 platforms :mri, :mingw do
-  group :mysql2 do
-    gem "mysql2", "~> 0.3.11"
-  end
-
   group :postgres do
     gem 'pg', "~> 0.17.1"
-  end
-
-  group :sqlite do
-    gem "sqlite3"
   end
 end
 
