@@ -9,7 +9,7 @@ set :domain, 'openproject.growthrepublic.com'
 set :user, 'app'
 set :deploy_to, '/home/app/applications/openproject'
 set :repository, 'git@github.com:growthrepublic/openproject.git'
-set :branch, 'master'
+set :branch, 'release/4.0'
 set :term_mode, :system
 set :keep_releases, 2
 set :shared_paths, %w( log config/database.yml config/secrets.yml )
