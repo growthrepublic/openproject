@@ -12,7 +12,7 @@ set :repository, 'git@github.com:growthrepublic/openproject.git'
 set :branch, 'stable'
 set :term_mode, :system
 set :keep_releases, 2
-set :shared_paths, %w( log config/database.yml config/secrets.yml )
+set :shared_paths, %w( log config/database.yml config/secrets.yml config/configuration.yml Gemfile.plugins)
 
 task :environment do
   invoke :'rbenv:load'
@@ -36,6 +36,7 @@ task deploy: :environment do
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
     invoke :'npm:install'
+    queue! 'rake generate_secret_token'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
 

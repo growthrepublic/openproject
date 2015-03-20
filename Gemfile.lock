@@ -1,10 +1,88 @@
 GIT
+  remote: https://github.com/finnlabs/openproject-backlogs.git
+  revision: 30cbbbda9634684e3a778e21fc0f3690efd87fe9
+  branch: stable
+  specs:
+    openproject-backlogs (4.0.8)
+      acts_as_silent_list
+      openproject-pdf_export
+      rails (~> 3.2.9)
+
+GIT
+  remote: https://github.com/finnlabs/openproject-costs.git
+  revision: 561f0448c82a08c4bd870c85b6254204e1b1bac8
+  branch: stable
+  specs:
+    openproject-costs (4.0.8)
+      rails (~> 3.2.9)
+
+GIT
+  remote: https://github.com/finnlabs/openproject-global_roles.git
+  revision: 5521bee77c8e7338fc44b3ddbfc1ef682c33d433
+  branch: stable
+  specs:
+    openproject-global_roles (4.0.8)
+      rails (~> 3.2.9)
+
+GIT
+  remote: https://github.com/finnlabs/openproject-help_link.git
+  revision: 83492e70c58e8a93911de2e185bcdd259309a3a9
+  branch: stable
+  specs:
+    openproject-help_link (4.0.8)
+      rails (~> 3.2.12)
+
+GIT
+  remote: https://github.com/finnlabs/openproject-meeting.git
+  revision: fb0ef2502078ea2ea884e8fb80695e0582fa4133
+  branch: stable
+  specs:
+    openproject-meeting (4.0.8)
+      rails (~> 3.2.9)
+
+GIT
+  remote: https://github.com/finnlabs/openproject-my_project_page.git
+  revision: 39011b4d8dfcd5bed9dc0c8846c09a91e7f47562
+  branch: stable
+  specs:
+    openproject-my_project_page (4.0.8)
+      rails (~> 3.2.9)
+
+GIT
+  remote: https://github.com/finnlabs/openproject-pdf_export.git
+  revision: 491142fb6bf113812d5d790ca8793fe5a20472a5
+  branch: stable
+  specs:
+    openproject-pdf_export (4.0.8)
+      prawn (~> 0.14.0)
+      rails (~> 3.2.14)
+
+GIT
+  remote: https://github.com/finnlabs/openproject-reporting.git
+  revision: d62eaee1e5d7b35ccc3ebd78b7c3f7587d8d3b51
+  branch: stable
+  specs:
+    openproject-reporting (4.0.8)
+      openproject-costs (>= 4.0.0)
+      rails (~> 3.2.9)
+      reporting_engine (>= 1.0.0)
+
+GIT
   remote: https://github.com/finnlabs/rack-protection.git
   revision: 5a7d1bd2f05ca75faf7909c8cc978732a0080898
   ref: 5a7d1bd
   specs:
     rack-protection (1.5.2)
       rack
+
+GIT
+  remote: https://github.com/finnlabs/reporting_engine.git
+  revision: ad48672375e977b671782ae94b22e3205d79452c
+  branch: stable
+  specs:
+    reporting_engine (1.0.0)
+      json
+      rails (~> 3.2.9)
 
 GIT
   remote: https://github.com/finnlabs/representable
@@ -42,6 +120,14 @@ GIT
       sprockets-rails (~> 2.0.0.backport1)
 
 GIT
+  remote: https://github.com/opf/openproject-documents.git
+  revision: a1ea49c2356f923cc8b4c2ce982edfc885ada5e6
+  branch: stable
+  specs:
+    openproject-documents (4.0.8)
+      rails (~> 3.2.9)
+
+GIT
   remote: https://github.com/rails/prototype_legacy_helper.git
   revision: a2cd95c3e3c1a4f7a9566efdab5ce59c886cb05f
   specs:
@@ -61,6 +147,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
+    Ascii85 (1.0.2)
     actionmailer (3.2.21)
       actionpack (= 3.2.21)
       mail (~> 2.5.4)
@@ -92,7 +179,9 @@ GEM
       multi_json (~> 1.0)
     acts_as_list (0.3.0)
       activerecord (>= 3.0)
+    acts_as_silent_list (1.2.0)
     addressable (2.3.4)
+    afm (0.2.2)
     arel (3.0.3)
     awesome_nested_set (2.1.6)
       activerecord (>= 3.0.0)
@@ -197,6 +286,7 @@ GEM
       rack-mount
       virtus (>= 1.0.0)
     gravatar_image_tag (1.2.0)
+    hashery (2.1.1)
     hashie (2.1.1)
     hike (1.2.3)
     hooks (0.3.3)
@@ -249,8 +339,18 @@ GEM
       hashie (>= 1.2, < 3)
       rack (~> 1.0)
     open4 (1.3.4)
+    pdf-reader (1.3.3)
+      Ascii85 (~> 1.0.0)
+      afm (~> 0.2.0)
+      hashery (~> 2.0)
+      ruby-rc4
+      ttfunk
     pg (0.17.1)
     polyglot (0.3.5)
+    prawn (0.14.0)
+      pdf-reader (~> 1.2)
+      ruby-rc4
+      ttfunk (~> 1.0.3)
     prototype-rails (3.2.1)
       rails (~> 3.2)
     pry (0.9.12.6)
@@ -353,6 +453,7 @@ GEM
       iso8601
     ruby-prof (0.13.0)
     ruby-progressbar (1.7.1)
+    ruby-rc4 (0.1.5)
     rubytree (0.8.3)
       json (>= 1.7.5)
       structured_warnings (>= 0.1.3)
@@ -392,6 +493,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
+    ttfunk (1.0.3)
     tzinfo (0.3.43)
     uber (0.0.10)
     uglifier (2.1.1)
@@ -455,6 +557,15 @@ DEPENDENCIES
   object-daddy (~> 1.1.0)
   oj (~> 2.11.4)
   omniauth
+  openproject-backlogs!
+  openproject-costs!
+  openproject-documents!
+  openproject-global_roles!
+  openproject-help_link!
+  openproject-meeting!
+  openproject-my_project_page!
+  openproject-pdf_export!
+  openproject-reporting!
   pg (~> 0.17.1)
   prototype-rails
   prototype_legacy_helper (= 0.0.0)!
@@ -475,6 +586,7 @@ DEPENDENCIES
   rb-readline (~> 0.5.1)
   rdoc (>= 2.4.2)
   reform (~> 1.0.4)
+  reporting_engine!
   representable!
   request_store
   roar (~> 0.12.6)
