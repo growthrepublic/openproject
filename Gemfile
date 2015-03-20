@@ -113,8 +113,7 @@ gem 'cocaine'
 # required by Procfile, for deployment on heroku or packaging with packager.io.
 # also, better than thin since we can control worker concurrency.
 gem 'puma'
-
-gem 'mina-puma'
+gem 'mina-puma', require: false
 
 # Security fixes
 # Gems we don't depend directly on, but specify here to make sure we don't use a vulnerable
